@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "google/protobuf/wrappers.proto";
+
+option java_package = "com.ncl.seed.api.protobuf";
+
+// This is for illustrative purposes
+
+message Person {
+    google.protobuf.StringValue guest_id = 1;
+    google.protobuf.StringValue first_name = 2;
+}

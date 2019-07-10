@@ -1,0 +1,13 @@
+/.idea
+target
+/project/project
+/project/target
+/.scalafmt.conf
+/scalastyle-config.xml
+
+.DS_Store
+*~
+
+/logs
+/public/*
+!/public/mocked-data
