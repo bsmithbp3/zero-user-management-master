@@ -1,0 +1,34 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <button (click)="refreshTasks()">Refresh Task List</button>
+      <table border="1" class="table table-fixedheader table-bordered table-striped">
+        <thead>
+        <tr>
+          <th>Task ID</th>
+          <th>Process Inst ID</th>
+          <th>Process Name</th>
+          <th>Task name</th>
+          <th>Task description</th>
+          <th>Task container id</th>
+          <th>Task status</th>
+          <th>Task owner</th>
+          <th>Creation Date</th>
+          <th>Invoke Task</th>
+          <th>View Process</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let task of tasks">
+          <td>{{task.taskId}}</td><td>{{task.processInstanceId}}</td><td>{{task.processName}}</td><td>{{task.taskName}}</td>
+          <td>{{task.taskDescription}}</td><td>{{task.taskContainerId}}</td><td>{{task.taskStatus}}</td><td>{{task.taskOwner}}</td>
+          <td>{{task.creationDate}}</td><td><button (click)="invokeTask(task.taskId,task.taskContainerId,task.taskStatus)">Invoke Task</button></td>
+          <td><button (click)="showProcess(task.processName,task.processInstanceId)">Show Process</button></td>
+        </tr>
+        </tbody>
+      </table>
+      <button (click)="refreshTasks()">Refresh Task List</button>
+    </div>
+  </div>
+</div>

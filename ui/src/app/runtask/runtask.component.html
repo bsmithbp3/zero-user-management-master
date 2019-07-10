@@ -1,0 +1,100 @@
+<div  *ngIf="taskName === 'Request Access'">
+  <div class="jumbotron">
+    <div class="container">
+      <div class="col-md-6 mb-3">
+        <h2>Request PII Access</h2>
+        <br>
+      </div>
+      <div class="col-md-6 mb-3">
+
+        <h5>Requestor User Id : <span class="label label-default" id="requestFrom"></span></h5>
+
+      </div>
+      <form class="form-horizontal">
+        <div class="form-group">
+          <label class="control-label col-sm-4" for="requestorFor">Request Access For:</label>
+          <div class="col-sm-10">
+            <select class="form-control" id="requestorFor">
+              <option>Bill Smith</option>
+              <option>Alfredo Butron</option>
+              <option>Ben Ariss</option>
+              <option>Bailey Haydock</option>
+              <option>Tracy Hires</option>
+              <option>Hayden Praino</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <label for="groupName" >Type of Access:</label>
+            <select class="form-control" id="groupName">
+              <option>Employee</option>
+              <option>Customer</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-4" for="justificationT">Justification:</label>
+          <div class="col-sm-10">
+            <textarea rows="3"  class="form-control" id="justificationT" placeholder="Capture Justification">{{comments}}  {{taskId}}</textarea>
+          </div>
+
+        </div>
+        <div class="form-group">
+          <div class="col-md-6 mb-3">
+            <button class="btn btn-primary" (click)="completeTask(taskId,containerId)">You complete me</button>
+            <a class="btn btn-primary" href="/tasks" role="button">Cancel</a>
+
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div *ngIf="taskName === 'Approve Request'">
+  <div class="jumbotron">
+    <div class="container">
+      <div class="col-md-6 mb-3">
+        <h2>Approve Request PII Access</h2>
+        <br>
+      </div>
+      <div class="col-md-6 mb-3">
+
+        <h5>Requestor User Id : <span class="label label-default" id="requestFrom"></span></h5>
+
+      </div>
+      <form class="form-horizontal">
+        <div class="form-group">
+          <label class="control-label col-sm-4" for="requestorFor">Request Access For:</label>
+          <div class="col-sm-10">
+            <select class="form-control" id="requestorFor"></select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <label for="groupName" >Type of Access:</label>
+            <select class="form-control" id="groupName"></select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-4" for="justificationT">Justification:</label>
+          <div class="col-sm-10">
+            <textarea rows="3"  class="form-control" id="justificationT" placeholder="Capture Justification">@accessRequestApproval.comments</textarea>
+          </div>
+
+        </div>
+        <div class="form-group">
+          <div class="col-md-6 mb-3">
+            <button class="btn btn-primary" (click)="completeTask(taskId,containerId)">You complete me</button>
+            <a class="btn btn-primary" href="/tasks" role="button">Cancel</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

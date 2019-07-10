@@ -13,3 +13,6 @@ GET     /*file                      controllers.FrontendController.assetOrDefaul
 
 # Test post request
 POST    /api/postTest               controllers.HomeController.postTest()
+POST    /api/listTasks                  controllers.HomeController.listTasks()
+POST    /api/completeTask/:tid/:containerId controllers.HomeController.completeTask(tid,containerId)
+POST    /api/initTask/:tid/:containerId controllers.HomeController.initTask(tid,containerId)

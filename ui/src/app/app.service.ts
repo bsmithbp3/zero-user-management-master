@@ -32,4 +32,16 @@ export class AppService {
   public sendData(): Observable<any> {
     return this.http.post(this.dataPostTestUrl, {});
   }
+  /**
+   * Makes a http post request to send some data to backend & get response.
+   */
+  public sendDataURL(url: string): Observable<any> {
+    return this.http.post(url, {});
+  }
+  public   postDataURLSync(url: string) : string {
+      this.http.post(url, {}).toPromise();
+      console.log('No issues, I will wait until promise is resolved..');
+      return "";
+
+   }
 }

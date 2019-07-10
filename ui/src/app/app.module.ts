@@ -8,6 +8,8 @@ import { RouteExampleComponent } from './route-example/route-example.component';
 
 import { AppService } from './app.service';
 import { AppHttpInterceptorService } from './http-interceptor.service';
+import { TasklistComponent } from './tasklist/tasklist.component';
+import { RunTaskComponent } from './runtask/runtask.component';
 
 const routes: Routes = [
   {
@@ -25,6 +27,19 @@ const routes: Routes = [
     component: RouteExampleComponent,
     data: { technology: 'Angular' }
   },
+    {
+      path: 'tasks',
+      component: TasklistComponent
+    },
+    {
+      path: 'runTask/:taskId/:containerId',
+      component: RunTaskComponent
+    },
+    {
+      path: 'completeTask/:taskId/:containerId',
+      component: RunTaskComponent
+    },
+
   {
     path: '**',
     redirectTo: '/play',
@@ -35,7 +50,9 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    RouteExampleComponent
+    RouteExampleComponent,
+    TasklistComponent,
+    RunTaskComponent
   ],
   imports: [
     BrowserModule,
