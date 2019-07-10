@@ -39,14 +39,14 @@ export class RunTaskComponent implements OnInit {
     this.paramsSub.unsubscribe();
   }
 
-public async completeTask(tid: string, containerId:string): void {
+public async completeTask(tid: string, containerId:string): Promise<String> {
 //this._router.navigate(['tasks']);
 
     console.log("just before complete");
     await this.appService.postDataURLSync("/api/completeTask/"+tid+"/"+containerId);
     console.log("complete task done");
     this._router.navigate(['tasks']);
-
+    return ""
 
   }
 public OLDcompleteTask(tid: string, containerId:string): void {
